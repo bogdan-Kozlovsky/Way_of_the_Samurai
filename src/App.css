@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+    width: 1000px;
+    padding: 0 15px;
+    margin: 0 auto 40px;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.box {
+    display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*//header**/
+.header {
+    padding: 20px 0;
+    background-color: greenyellow;
+    margin: 10px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+    max-width: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/*menu*/
+.navigation {
+    max-width: 300px;
+    width: 100%;
+    padding: 20px;
+    background-color: greenyellow;
+    text-align: center;
+}
+
+.navigation__list {
+    list-style: none;
+}
+
+.navigation__item {
+    margin-bottom: 5px;
+}
+
+.navigation__link {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+}
+
+
+/*profile*/
+
+.profile {
+    margin-left: 20px;
+}
+
+.profile__banner {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.profile__banner_img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: left;
+}
+
+.profile__inner {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.profile__avatar {
+    display: block;
+    width: 70px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.profile__item{
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.profile__item span{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+/*// post*/
+.profile__post{
+    margin-bottom: 20px;
+}
+
+.profile__post_title{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile__post__textarea{
+    width: 100%;
+    height: 100px;
+    resize: none;
+    margin-bottom: 20px;
 }
