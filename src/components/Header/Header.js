@@ -1,10 +1,11 @@
 import React from 'react';
+import style from './Header.module.css'
 
 const Header = () => {
     return (
         <>
-            <header className="header">
-                <img className="logo" src="./../images/logo.png" alt="logo"/>
+            <header className={style.header}>
+                <img className={style.logo} src="./../images/logo.png" alt="logo"/>
             </header>
         </>
     );

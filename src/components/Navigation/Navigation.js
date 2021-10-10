@@ -1,32 +1,33 @@
 import React from 'react';
+import style from './Navigation.module.css'
 
 const Navigation = () => {
     return (
         <>
-            <nav className="navigation">
-                <ul className="navigation__list">
-                    <li className="navigation__item">
-                        <a className="navigation__link" href="#">
+            <nav className={style.navigation}>
+                <ul className={style.navigation__list}>
+                    <li className={style.navigation__item}>
+                        <a className={style.navigation__link} href="#">
                             Profile
                         </a>
                     </li>
-                    <li className="navigation__item">
-                        <a className="navigation__link" href="#">
+                    <li className={style.navigation__item}>
+                        <a className={style.navigation__link} href="#">
                             Messages
                         </a>
                     </li>
-                    <li className="navigation__item">
-                        <a className="navigation__link" href="#">
+                    <li className={style.navigation__item}>
+                        <a className={style.navigation__link} href="#">
                             News
                         </a>
                     </li>
-                    <li className="navigation__item">
-                        <a className="navigation__link" href="#">
+                    <li className={style.navigation__item}>
+                        <a className={style.navigation__link} href="#">
                             Music
                         </a>
                     </li>
-                    <li className="navigation__item">
-                        <a className="navigation__link" href="#">
+                    <li className={style.navigation__item}>
+                        <a className={style.navigation__link} href="#">
                             Settings
                         </a>
                     </li>

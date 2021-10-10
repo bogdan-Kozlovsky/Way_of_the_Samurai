@@ -1,0 +1,59 @@
+/*profile*/
+
+.profile {
+    margin-left: 20px;
+}
+
+.profile__banner {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.profile__banner_img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: left;
+}
+
+.profile__inner {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.profile__avatar {
+    display: block;
+    width: 70px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.profile__item{
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.profile__item span{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+/*// post*/
+.profile__post{
+    margin-bottom: 20px;
+}
+
+.profile__post_title{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile__post__textarea{
+    width: 100%;
+    height: 100px;
+    resize: none;
+    margin-bottom: 20px;
+}
