@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './Navigation.module.css'
+import {NavLink} from "react-router-dom";
 
 const Navigation = () => {
     return (
@@ -7,29 +8,29 @@ const Navigation = () => {
             <nav className={style.navigation}>
                 <ul className={style.navigation__list}>
                     <li className={style.navigation__item}>
-                        <a className={style.navigation__link} href="#">
+                        <NavLink className={style.navigation__link} activeClassName={style.active} to="/profile">
                             Profile
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={style.navigation__item}>
-                        <a className={style.navigation__link} href="#">
+                        <NavLink className={style.navigation__link} activeClassName={style.active} to="/dialogs">
                             Messages
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={style.navigation__item}>
-                        <a className={style.navigation__link} href="#">
+                        <NavLink className={style.navigation__link} activeClassName={style.active} to="/news">
                             News
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={style.navigation__item}>
-                        <a className={style.navigation__link} href="#">
+                        <NavLink className={style.navigation__link} activeClassName={style.active} to="/music">
                             Music
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={style.navigation__item}>
-                        <a className={style.navigation__link} href="#">
+                        <NavLink className={style.navigation__link} activeClassName={style.active} to="/settings">
                             Settings
-                        </a>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

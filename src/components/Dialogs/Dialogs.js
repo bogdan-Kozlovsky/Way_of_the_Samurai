@@ -4,7 +4,7 @@ import style from './Dialogs.module.css'
 const Dialogs = () => {
     return (
         <>
-         Dialogs
+         Hello Dialogs!
         </>
     );
 };
