@@ -11,6 +11,7 @@ import Settings from "./components/Settings/Settings";
 
 
 function App() {
+
     return (
         <BrowserRouter>
             <div className="wrapper">
@@ -22,6 +23,7 @@ function App() {
                     <Route path={'/news'} component={News}/>
                     <Route path={'/music'} component={Music}/>
                     <Route path={'/settings'} component={Settings}/>
+
                 </div>
             </div>
         </BrowserRouter>

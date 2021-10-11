@@ -1,0 +1,50 @@
+.dialogs{
+    width: 100%;
+}
+
+
+.dialogs__title{
+    margin-bottom: 20px;
+}
+
+.dialogs__inner{
+    display: flex;
+}
+
+.dialogs__items{
+    flex: 0 1 300px;
+    position: relative;
+}
+
+.dialogs__items::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: black;
+}
+
+.dialogs__user_name{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.dialogs__user_name img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.dialogs__user_name span{
+    margin-left: 10px;
+}
+
+
+.dialogs__items_message{
+    margin-left: 20px;
+}
