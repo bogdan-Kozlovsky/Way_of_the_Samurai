@@ -14,9 +14,9 @@ const MyPost = () => {
                     <button className={style.profile__post_btn}>submit</button>
                     <button className={style.profile__post_btn}>reset</button>
                 </div>
-                <Post/>
-                <Post/>
-                <Post/>
+                <Post message={'Bogdan'} likes={1}/>
+                <Post message={'Vasia'} likes={2}/>
+                <Post message={'Vlad'} likes={3}/>
             </div>
         </>
     );

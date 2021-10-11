@@ -1,3 +1,7 @@
+.profile__post_items span{
+    margin-left: 10px;
+}
+
 .profile__post_item{
     display: flex;
     align-items: center;
