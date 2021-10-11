@@ -1,0 +1,16 @@
+.profile__post_item{
+    display: flex;
+    align-items: center;
+}
+
+.profile__post_icons{
+    width: 40px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.profile__post_descr{
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+}
