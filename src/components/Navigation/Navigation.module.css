@@ -24,9 +24,6 @@
     font-weight: 500;
 }
 
-.navigation__link active{
-    color: green;
-}
 
 .active{
     color: #fff;
