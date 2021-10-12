@@ -12,6 +12,12 @@ const Dialogs = () => {
         {name: 'Maxs', id: 4}
     ]
 
+    let userElement = userDate.map((user) => {
+        return (
+            <User name={user.name} id={user.id}/>
+        )
+    })
+
     const messageDate = [
         {message: 'Hello Bogdan'},
         {message: 'Hello Vasia'},
@@ -19,22 +25,23 @@ const Dialogs = () => {
         {message: 'Hello Maxs'},
     ]
 
+    // краткая запись
+    let messageElement = messageDate.map(message => <Message message={message.message}/>)
+
 
     return (
         <div className={style.dialogs}>
             <h1 className={style.dialogs__title}>Dialogs</h1>
             <div className={style.dialogs__inner}>
                 <ul className={style.dialogs__items}>
-                    <User name={userDate[0].name} id={userDate[0].id}/>
-                    <User name={userDate[1].name} id={userDate[1].id}/>
-                    <User name={userDate[2].name} id={userDate[2].id}/>
-                    <User name={userDate[3].name} id={userDate[3].id}/>
+
+                    {userElement}
+
                 </ul>
                 <ul className={style.dialogs__items_message}>
-                    <Message message={messageDate[0].message}/>
-                    <Message message={messageDate[1].message}/>
-                    <Message message={messageDate[2].message}/>
-                    <Message message={messageDate[3].message}/>
+
+                    {messageElement}
+
                 </ul>
             </div>
         </div>

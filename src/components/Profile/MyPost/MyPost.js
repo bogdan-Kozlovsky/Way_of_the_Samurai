@@ -6,10 +6,20 @@ const MyPost = () => {
 
     // данные из сервера
     const postDate = [
-        {message:'Bogdan',likes:1},
-        {message:'Vasia',likes:2},
-        {message:'Vlad',likes:3},
+        {message: 'Bogdan', likes: 1},
+        {message: 'Vasia', likes: 2},
+        {message: 'Vlad', likes: 3},
     ]
+
+    // краткая запись
+    let postElement = postDate.map(post => <Post message={post.message} likes={post.likes}/>)
+
+
+    // let postElement = postDate.map((post)=>{
+    //     return(
+    //         <Post message={post.message} likes={post.likes}/>
+    //     )
+    // })
     return (
         <>
             <div className={style.profile__post}>
@@ -21,9 +31,7 @@ const MyPost = () => {
                     <button className={style.profile__post_btn}>submit</button>
                     <button className={style.profile__post_btn}>reset</button>
                 </div>
-                <Post message={postDate[0].message} likes={postDate[0].likes}/>
-                <Post message={postDate[1].message} likes={postDate[1].likes}/>
-                <Post message={postDate[2].message} likes={postDate[2].likes}/>
+                {postElement}
             </div>
         </>
     );
