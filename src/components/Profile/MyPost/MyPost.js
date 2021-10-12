@@ -3,6 +3,13 @@ import Post from './Post/Post'
 import style from './MyPost.module.css'
 
 const MyPost = () => {
+
+    // данные из сервера
+    const postDate = [
+        {message:'Bogdan',likes:1},
+        {message:'Vasia',likes:2},
+        {message:'Vlad',likes:3},
+    ]
     return (
         <>
             <div className={style.profile__post}>
@@ -14,9 +21,9 @@ const MyPost = () => {
                     <button className={style.profile__post_btn}>submit</button>
                     <button className={style.profile__post_btn}>reset</button>
                 </div>
-                <Post message={'Bogdan'} likes={1}/>
-                <Post message={'Vasia'} likes={2}/>
-                <Post message={'Vlad'} likes={3}/>
+                <Post message={postDate[0].message} likes={postDate[0].likes}/>
+                <Post message={postDate[1].message} likes={postDate[1].likes}/>
+                <Post message={postDate[2].message} likes={postDate[2].likes}/>
             </div>
         </>
     );
