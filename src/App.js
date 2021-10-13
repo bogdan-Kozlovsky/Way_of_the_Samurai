@@ -11,30 +11,8 @@ import Settings from "./components/Settings/Settings";
 import User from "./components/Dialogs/User/User";
 
 
-function App() {
+function App(props) {
 
-    // данные для постов
-    const posts = [
-        {message: 'Bogdan', likes: 1},
-        {message: 'Vasia', likes: 2},
-        {message: 'Vlad', likes: 3},
-    ]
-
-// данные для компонента Диалог данные для отрисовки юзера
-    const users = [
-        {name: 'Bogdan', id: 1},
-        {name: 'Vasia', id: 2},
-        {name: 'Vlad', id: 3},
-        {name: 'Maxs', id: 4}
-    ]
-
-    // данные для компонента Диалог для отрисовки смс
-    const messages = [
-        {message: 'Hello Bogdan'},
-        {message: 'Hello Vasia'},
-        {message: 'Hello Vlad'},
-        {message: 'Hello Maxs'},
-    ]
 
     return (
         <BrowserRouter>
@@ -42,8 +20,8 @@ function App() {
                 <Header/>
                 <div className="box">
                     <Navigation/>
-                    <Route path={'/profile'} render={() => <Profile posts={posts}/>}/>
-                    <Route path={'/dialogs'} render={() => <Dialogs users={users} messages={messages}/>}/>
+                    <Route path={'/profile'} render={() => <Profile state={props.state.profilePage}/>}/>
+                    <Route path={'/dialogs'} render={() => <Dialogs state={props.state.dialogsPage}/>}/>
                     <Route path={'/news'} render={() => <News/>}/>
                     <Route path={'/music'} render={() => <Music/>}/>
                     <Route path={'/settings'} render={() => <Settings/>}/>

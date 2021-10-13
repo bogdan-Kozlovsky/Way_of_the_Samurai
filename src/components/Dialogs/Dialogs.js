@@ -5,18 +5,17 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    
+
     //данные из сервера
-    let userElement = props.users.map((user) => {
+    let userElement = props.state.users.map((user) => {
         return (
             <User name={user.name} id={user.id}/>
         )
     })
 
 
-
     // краткая запись
-    let messageElement = props.messages.map(message => <Message message={message.message}/>)
+    let messageElement = props.state.messages.map(message => <Message message={message.message}/>)
 
 
     return (
