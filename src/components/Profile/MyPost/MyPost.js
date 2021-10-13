@@ -2,17 +2,14 @@ import React from 'react'
 import Post from './Post/Post'
 import style from './MyPost.module.css'
 
-const MyPost = () => {
+const MyPost = (props) => {
+
 
     // данные из сервера
-    const postDate = [
-        {message: 'Bogdan', likes: 1},
-        {message: 'Vasia', likes: 2},
-        {message: 'Vlad', likes: 3},
-    ]
+
 
     // краткая запись
-    let postElement = postDate.map(post => <Post message={post.message} likes={post.likes}/>)
+    let postElement = props.posts.map(post => <Post message={post.message} likes={post.likes}/>)
 
 
     // let postElement = postDate.map((post)=>{
@@ -31,7 +28,11 @@ const MyPost = () => {
                     <button className={style.profile__post_btn}>submit</button>
                     <button className={style.profile__post_btn}>reset</button>
                 </div>
+
+
                 {postElement}
+
+
             </div>
         </>
     );

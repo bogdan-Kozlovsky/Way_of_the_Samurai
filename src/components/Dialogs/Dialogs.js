@@ -3,30 +3,20 @@ import style from './Dialogs.module.css'
 import User from "./User/User";
 import Message from "./Message/Message";
 
-const Dialogs = () => {
-    //данные из сервера
-    const userDate = [
-        {name: 'Bogdan', id: 1},
-        {name: 'Vasia', id: 2},
-        {name: 'Vlad', id: 3},
-        {name: 'Maxs', id: 4}
-    ]
+const Dialogs = (props) => {
 
-    let userElement = userDate.map((user) => {
+    
+    //данные из сервера
+    let userElement = props.users.map((user) => {
         return (
             <User name={user.name} id={user.id}/>
         )
     })
 
-    const messageDate = [
-        {message: 'Hello Bogdan'},
-        {message: 'Hello Vasia'},
-        {message: 'Hello Vlad'},
-        {message: 'Hello Maxs'},
-    ]
+
 
     // краткая запись
-    let messageElement = messageDate.map(message => <Message message={message.message}/>)
+    let messageElement = props.messages.map(message => <Message message={message.message}/>)
 
 
     return (
