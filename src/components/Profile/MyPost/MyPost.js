@@ -2,8 +2,8 @@ import React from 'react'
 import Post from './Post/Post'
 import style from './MyPost.module.css'
 
+
 const MyPost = (props) => {
-    // данные из сервера
 
 
     // краткая запись
@@ -18,12 +18,14 @@ const MyPost = (props) => {
 
     const newPostElement = React.createRef();
 
-    const newPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
-        newPostElement.current.value = '';
+    const addPost = () => {
+        props.addPost()
     }
 
+    const onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text)
+    }
 
 
     return (
@@ -32,10 +34,13 @@ const MyPost = (props) => {
                 <h1 className={style.profile__post_title}>
                     Мои пости
                 </h1>
-                <textarea ref={newPostElement} className={style.profile__post__textarea}></textarea>
+                <textarea onChange={onPostChange}
+                          value={props.newPostText}
+                          ref={newPostElement}
+                          className={style.profile__post__textarea}></textarea>
                 <div className={style.profile__post_box}>
 
-                    <button onClick={newPost} className={style.profile__post_btn}>submit
+                    <button onClick={addPost} className={style.profile__post_btn}>submit
                     </button>
                     <button className={style.profile__post_btn}>reset</button>
                 </div>
