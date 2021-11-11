@@ -20,9 +20,10 @@ const MyPost = (props) => {
 
     const newPost = () => {
         let text = newPostElement.current.value;
-        props.addPost('Bogdan');
-        console.log('props.addPost')
+        props.addPost(text);
+        newPostElement.current.value = '';
     }
+
 
 
     return (
