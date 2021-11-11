@@ -7,15 +7,17 @@ const Dialogs = (props) => {
 
 
     //данные из сервера
-    let userElement = props.state.users.map((user) => {
+    let userElement = props.state.users.map(user => {
         return (
-            <User name={user.name} id={user.id}/>
+            <User name={user.name} id={user.id} key={user.id}/>
         )
     })
 
 
     // краткая запись
-    let messageElement = props.state.messages.map(message => <Message message={message.message}/>)
+    let messageElement = props.state.messages.map(message => <Message
+        message={message.message}
+        key={message.message}/>)
 
 
     return (

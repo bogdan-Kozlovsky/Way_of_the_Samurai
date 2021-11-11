@@ -2,9 +2,9 @@ let state = {
     profilePage: {
         // данные для постов
         posts: [
-            {message: 'Bogdan', likes: 1},
-            {message: 'Vasia', likes: 2},
-            {message: 'Vlad', likes: 3},
+            {description: 'Bogdan', likes: 1, id: 1},
+            {description: 'Vasia', likes: 2, id: 2},
+            {description: 'Vlad', likes: 3, id: 3},
         ],
     },
 
@@ -27,6 +27,16 @@ let state = {
     }
 
 
+}
+
+export const addPost = (post) => {
+    const newPost = {
+        id: 4,
+        description: post,
+        likes: 0
+    }
+
+    state.profilePage.posts.push(newPost);
 }
 
 export default state;
