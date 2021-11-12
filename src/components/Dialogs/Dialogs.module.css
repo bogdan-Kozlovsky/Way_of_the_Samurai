@@ -74,3 +74,19 @@
     left: 0;
     transform: translateY(-50%);
 }
+
+/*//form*/
+
+.dialogs__textarea {
+    width: 100%;
+    resize: none;
+    height: 100px;
+}
+
+.dialogs__btn {
+    background-color: transparent;
+    border: 1px solid orange;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 600;
+}

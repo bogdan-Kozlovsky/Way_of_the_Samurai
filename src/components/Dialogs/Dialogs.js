@@ -20,6 +20,9 @@ const Dialogs = (props) => {
         key={message.message}/>)
 
 
+    //form
+
+
     return (
         <div className={style.dialogs}>
             <h1 className={style.dialogs__title}>Dialogs</h1>
@@ -35,6 +38,15 @@ const Dialogs = (props) => {
 
                 </ul>
             </div>
+
+            <form>
+                <textarea
+                    className={style.dialogs__textarea}
+                ></textarea>
+                <button className={style.dialogs__btn}>
+                    Создать...
+                </button>
+            </form>
         </div>
     );
 };
