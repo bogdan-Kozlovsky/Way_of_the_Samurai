@@ -1,4 +1,3 @@
-
 const store = {
     _state: {
         profilePage: {
@@ -36,25 +35,27 @@ const store = {
         return this._state
     },
 
-    addPost() {
-        const newPost = {
-            id: 4,
-            description: this._state.profilePage.newPostText,
-            likes: 0
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            const newPost = {
+                id: 4,
+                description: this._state.profilePage.newPostText,
+                likes: 0
+            }
+            this._state.profilePage.posts.push(newPost)
+            this._state.profilePage.newPostText = ''
+            this._callSubscriber(this._state)
+
+        } else if (action.type === 'UPADATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText
+            this._callSubscriber(this._state)
         }
-
-        this._state.profilePage.posts.push(newPost)
-        this._state.profilePage.newPostText = ''
-        this._callSubscriber(this._state);
     },
 
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer;  // observer
     }
+
 }
 
 window.store = store

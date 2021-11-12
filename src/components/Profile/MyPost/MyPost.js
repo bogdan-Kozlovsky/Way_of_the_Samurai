@@ -10,21 +10,15 @@ const MyPost = (props) => {
     let postElement = props.posts.map(post => <Post message={post.description} likes={post.likes}/>)
 
 
-    // let postElement = postDate.map((post)=>{
-    //     return(
-    //         <Post message={post.message} likes={post.likes}/>
-    //     )
-    // })
-
     const newPostElement = React.createRef();
 
     const addPost = () => {
-        props.addPost()
+        props.dispatch({type: 'ADD-POST'})
     }
 
     const onPostChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text)
+        props.dispatch({type: 'UPADATE-NEW-POST-TEXT', newText: text})
     }
 
 
