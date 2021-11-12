@@ -2,9 +2,15 @@ import React from 'react';
 import style from './Dialogs.module.css'
 import User from "./User/User";
 import Message from "./Message/Message";
+import {
+    addPostActionCreator,
+    sendMessageCreator,
+    updateNewMessageBodyCreator,
+    updateNewPostTextActionCreator
+} from "../redux/state";
 
 const Dialogs = (props) => {
-
+    // debugger
 
     //данные из сервера
     let userElement = props.state.users.map(user => {
@@ -21,6 +27,17 @@ const Dialogs = (props) => {
 
 
     //form
+    const state = props.store.getState().dialogsPage
+    let newMessageBody = state.newMessageBody;
+
+    let onSendMessageClick = () => {
+        props.store.dispatch(sendMessageCreator());
+    }
+
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.store.dispatch(updateNewMessageBodyCreator(body));
+    }
 
 
     return (
@@ -41,9 +58,14 @@ const Dialogs = (props) => {
 
             <form>
                 <textarea
+                    value={newMessageBody}
+                    onChange={onNewMessageChange}
                     className={style.dialogs__textarea}
                 ></textarea>
-                <button className={style.dialogs__btn}>
+                <button
+                    onClick={onSendMessageClick}
+                    type="button" className={style.dialogs__btn}
+                >
                     Создать...
                 </button>
             </form>

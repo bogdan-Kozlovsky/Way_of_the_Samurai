@@ -11,6 +11,8 @@ const MyPost = (props) => {
                                                              key={index}/>)
 
 
+
+
     const newPostElement = React.createRef();
 
     const addPost = () => {
