@@ -1,3 +1,8 @@
+//MyPost
+const ADD_POST = 'ADD_POST'
+const UPADATE_NEW_POST_TEXT = 'UPADATE_NEW_POST_TEXT'
+//MyPost
+
 const store = {
     _state: {
         profilePage: {
@@ -36,7 +41,7 @@ const store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             const newPost = {
                 id: 4,
                 description: this._state.profilePage.newPostText,
@@ -46,14 +51,15 @@ const store = {
             this._state.profilePage.newPostText = ''
             this._callSubscriber(this._state)
 
-        } else if (action.type === 'UPADATE-NEW-POST-TEXT') {
+        } else if (action.type === UPADATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText
             this._callSubscriber(this._state)
         }
     },
 
+
     subscribe(observer) {
-        this._callSubscriber = observer;  // observer
+        this._callSubscriber = observer;
     }
 
 }
@@ -61,3 +67,8 @@ const store = {
 window.store = store
 
 export default store;
+
+//MyPost
+export const addPostActionCreator = () => ({type: ADD_POST})
+export const updateNewPostTextActionCreator = (text) => ({type: UPADATE_NEW_POST_TEXT, newText: text})
+//MyPost
