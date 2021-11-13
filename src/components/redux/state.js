@@ -1,12 +1,5 @@
-//MyPost
-const ADD_POST = 'ADD_POST'
-const UPADATE_NEW_POST_TEXT = 'UPADATE_NEW_POST_TEXT'
-//MyPost
-
-// Dialogs
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY'
-const SEND_MESSAGE = 'SEND_MESSAGE'
-// Dialogs
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
 
 
 const store = {
@@ -47,28 +40,11 @@ const store = {
         return this._state
     },
 
-    dispatch(action) {
-        if (action.type === ADD_POST) {
-            const newPost = {
-                id: 4,
-                description: this._state.profilePage.newPostText,
-                likes: 0
-            }
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = ''
-            this._callSubscriber(this._state)
+    dispatch: function (action) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
 
-        } else if (action.type === UPADATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText
-            this._callSubscriber(this._state)
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogsPage.newMessageBody = action.body
-            this._callSubscriber(this._state)
-        } else if (action.type === SEND_MESSAGE) {
-            let body = this._state.dialogsPage.newMessageBody
-            this._state.dialogsPage.messages.push({message: body, id: 5})
-            this._callSubscriber(this._state)
-        }
+        this._callSubscriber(this._state)
     },
 
 
@@ -82,12 +58,6 @@ window.store = store
 
 export default store;
 
-//MyPost
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateNewPostTextActionCreator = (text) => ({type: UPADATE_NEW_POST_TEXT, newText: text})
-//MyPost
 
-//Dialogs
-export const sendMessageCreator = () => ({type: SEND_MESSAGE})
-export const updateNewMessageBodyCreator = (body) => ({ type: UPDATE_NEW_MESSAGE_BODY, body: body })
-//Dialogs
+export class sendMessageCreator {
+}

@@ -2,12 +2,13 @@ import React from 'react';
 import style from './Dialogs.module.css'
 import User from "./User/User";
 import Message from "./Message/Message";
-import {
-    addPostActionCreator,
-    sendMessageCreator,
-    updateNewMessageBodyCreator,
-    updateNewPostTextActionCreator
-} from "../redux/state";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../redux/dialogs-reducer";
+// import {
+//     addPostActionCreator,
+//     sendMessageCreator,
+//     updateNewMessageBodyCreator,
+//     updateNewPostTextActionCreator
+// } from "../redux/state";
 
 const Dialogs = (props) => {
     // debugger
