@@ -4,25 +4,22 @@ import style from './MyPost.module.css'
 import {addPostActionCreator, updateNewPostTextActionCreator} from "../../redux/profile-reducer";
 
 
-
 const MyPost = (props) => {
-
     // краткая запись
-    let postElement = props.posts.map((post, index) => <Post message={post.description} likes={post.likes}
-                                                             key={index}/>)
-
-
+    let postElement = props.posts.map((post, index) =>
+        <Post message={post.description} likes={post.likes}
+              key={index}/>)
 
 
     const newPostElement = React.createRef();
 
     const addPost = () => {
-        props.dispatch(addPostActionCreator())
+        props.addPost()
     }
 
     const onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch(updateNewPostTextActionCreator(text))
+        props.updateNewPostText(text)
     }
 
 

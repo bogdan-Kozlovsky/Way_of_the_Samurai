@@ -14,7 +14,7 @@ const Dialogs = (props) => {
     // debugger
 
     //данные из сервера
-    let userElement = props.state.users.map(user => {
+    let userElement = props.dialogsPage.users.map(user => {
         return (
             <User name={user.name} id={user.id} key={user.id}/>
         )
@@ -22,22 +22,24 @@ const Dialogs = (props) => {
 
 
     // краткая запись
-    let messageElement = props.state.messages.map(message => <Message
+    let messageElement = props.dialogsPage.messages.map(message => <Message
         message={message.message}
         key={message.message}/>)
 
 
     //form
-    const state = props.store.getState().dialogsPage
+    const state = props.dialogsPage
     let newMessageBody = state.newMessageBody;
 
+
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator());
+        props.sendMessageCreator()
     }
+
 
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.store.dispatch(updateNewMessageBodyCreator(body));
+        props.updateNewMessageBodyCreator(body);
     }
 
 

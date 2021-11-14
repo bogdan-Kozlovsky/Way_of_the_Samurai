@@ -58,6 +58,3 @@ window.store = store
 
 export default store;
 
-
-export class sendMessageCreator {
-}
