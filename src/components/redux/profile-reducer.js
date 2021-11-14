@@ -3,7 +3,21 @@ const ADD_POST = 'ADD_POST'
 const UPADATE_NEW_POST_TEXT = 'UPADATE_NEW_POST_TEXT'
 //MyPost
 
-const profileReducer = (state, action) => {
+// данные по умолчанию
+// начальний state
+const initialState = {
+        // данные для постов
+        posts: [
+            {description: 'Bogdan', likes: 1, id: 1},
+            {description: 'Vasia', likes: 2, id: 2},
+            {description: 'Vlad', likes: 3, id: 3},
+        ],
+        newPostText: '',
+}
+// начальний state
+// данные по умолчанию
+
+const profileReducer = (state = initialState, action) => {
     if (action.type === ADD_POST) {
         const newPost = {
             id: 4,

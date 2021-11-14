@@ -3,12 +3,35 @@ const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY'
 const SEND_MESSAGE = 'SEND_MESSAGE'
 // Dialogs
 
-const dialogsReducer = (state, action) => {
+// данные по умолчанию
+// начальний state
+const initialState = {
+        // данные для компонента Диалог данные для отрисовки юзера
+        users: [
+            {name: 'Bogdan', id: 1},
+            {name: 'Vasia', id: 2},
+            {name: 'Vlad', id: 3},
+            {name: 'Maxs', id: 4}
+        ],
+
+// данные для компонента Диалог для отрисовки смс
+        messages: [
+            {message: 'Hello Bogdan', id: 1},
+            {message: 'Hello Vasia', id: 2},
+            {message: 'Hello Vlad', id: 3},
+            {message: 'Hello Maxs', id: 4},
+        ],
+        newMessageBody: ''
+}
+// начальний state
+// данные по умолчанию
+
+const dialogsReducer = (state = initialState, action) => {
     if (action.type === UPDATE_NEW_MESSAGE_BODY) {
         state.newMessageBody = action.body
     } else if (action.type === SEND_MESSAGE) {
         let body = state.newMessageBody
-        state.newMessageBody('')
+        state.newMessageBody = ''
         state.messages.push({message: body, id: 5})
     }
     return state
