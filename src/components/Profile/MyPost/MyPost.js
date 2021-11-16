@@ -5,6 +5,7 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../red
 
 
 const MyPost = (props) => {
+
     // краткая запись
     let postElement = props.posts.map((post, index) =>
         <Post message={post.description} likes={post.likes}
