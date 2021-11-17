@@ -6,13 +6,13 @@ const UPADATE_NEW_POST_TEXT = 'UPADATE_NEW_POST_TEXT'
 // данные по умолчанию
 // начальний state
 const initialState = {
-        // данные для постов
-        posts: [
-            {description: 'Bogdan', likes: 1, id: 1},
-            {description: 'Vasia', likes: 2, id: 2},
-            {description: 'Vlad', likes: 3, id: 3},
-        ],
-        newPostText: '',
+    // данные для постов
+    posts: [
+        {description: 'Bogdan', likes: 1, id: 1},
+        {description: 'Vasia', likes: 2, id: 2},
+        {description: 'Vlad', likes: 3, id: 3},
+    ],
+    newPostText: '',
 }
 // начальний state
 // данные по умолчанию
@@ -24,11 +24,13 @@ const profileReducer = (state = initialState, action) => {
             description: state.newPostText,
             likes: 0
         }
-        state.posts.push(newPost)
-        state.newPostText = ''
-
+        let copyState = {...state}
+        copyState.posts = [...state.posts]
+        copyState.posts.push(newPost)
+        copyState.newPostText = ''
     } else if (action.type === UPADATE_NEW_POST_TEXT) {
-        state.newPostText = action.newText
+        let copyState = {...state}
+        copyState.newPostText = action.newText
     }
     return state
 }

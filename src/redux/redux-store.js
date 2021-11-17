@@ -11,6 +11,6 @@ const redusers = combineReducers({
 // сбор всех нашех Reducer
 
 
-const store = createStore(redusers)
+const store =  (redusers)
 
 export default store
