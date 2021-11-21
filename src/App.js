@@ -10,7 +10,7 @@ import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
-function App(props) {
+function App() {
 
     return (
         <div className="wrapper">
@@ -18,10 +18,8 @@ function App(props) {
             <div className="box">
                 <Navigation/>
                 <Route path={'/profile'} render={() => <Profile
-                    store={props.store}
                 />}/>
                 <Route path={'/dialogs'} render={() => <DialogsContainer
-                    store={props.store}
                 />}/>
                 <Route path={'/news'} render={() => <News/>}/>
                 <Route path={'/music'} render={() => <Music/>}/>

@@ -4,13 +4,13 @@ import dialogsReducer from "./dialogs-reducer";
 
 
 // сбор всех нашех Reducer
-const redusers = combineReducers({
+let redusers = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer
 })
 // сбор всех нашех Reducer
 
 
-const store =  (redusers)
+const store =  createStore(redusers)
 
 export default store

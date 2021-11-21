@@ -5,7 +5,7 @@ import MyPostContainer from "./MyPost/MyPostContainer";
 // import {updateNewPostText} from "../redux/store";
 
 const Profile = (props) => {
-
+    console.log(props)
     return (
         <>
             <div className={style.profile}>

@@ -18,25 +18,10 @@ const initialState = {
 // данные по умолчанию
 
 const profileReducer = (state = initialState, action) => {
-    // if (action.type === ADD_POST) {
-    //     const newPost = {
-    //         id: 4,
-    //         description: state.newPostText,
-    //         likes: 0
-    //     }
-    //     let copyState = {...state}
-    //     copyState.posts = [...state.posts]
-    //     copyState.posts.push(newPost)
-    //     copyState.newPostText = ''
-    // } else if (action.type === UPADATE_NEW_POST_TEXT) {
-    //     let copyState = {...state}
-    //     copyState.newPostText = action.newText
-    // }
-    // return state
 
 
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             const newPost = {
                 id: 4,
                 description: state.newPostText,
@@ -47,14 +32,19 @@ const profileReducer = (state = initialState, action) => {
                 posts: [...state.posts, newPost],
                 newPostText: ''
             }
+        }
 
-        case UPADATE_NEW_POST_TEXT:
+        case UPADATE_NEW_POST_TEXT: {
             return {
                 ...state,
                 newPostText: action.newText
             }
+        }
+        default :
+            return state
     }
 }
+
 
 //MyPost
 export const addPostActionCreator = () => ({type: ADD_POST})

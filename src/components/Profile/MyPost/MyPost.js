@@ -5,6 +5,7 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../red
 
 
 const MyPost = (props) => {
+    console.log(props)
 
     // краткая запись
     let postElement = props.posts.map((post, index) =>
